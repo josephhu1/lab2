@@ -200,7 +200,7 @@ int main(int argc, char *argv[])
       TAILQ_INSERT_TAIL(&waiting_list, prev_process, pointers);
 
     if (!TAILQ_EMPTY(&waiting_list)) {
-      struct process* cur_process = TAILQ(&waiting_list);
+      struct process* cur_process = TAILQ_FIRST(&waiting_list);
       TAILQ_REMOVE(&waiting_list, cur_process, pointers);
 
       if (!cur_process->start_flag) {
